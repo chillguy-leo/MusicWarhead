@@ -3,7 +3,7 @@ Plays a desired audio file when the Warhead starts, I made this for [plugin requ
 
 ## Audio Setup
 I would recomend [this](https://audio.online-convert.com/convert/mp3-to-ogg) to convert your mp3 files to ogg and set the correct preferences
-Set your channel to Mono & set the frequency to 48Khz so SCPSL can understand the audio correctly
+Set your channel to Mono & set the frequency to 48Khz so SCPSL can understand the audio correctly, then place your audio in a suitable location and place the direct address to it in `audio_location`
 
 ## Configs
 Config.yml:
