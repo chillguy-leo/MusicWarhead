@@ -7,7 +7,7 @@ namespace MusicWarhead
     public class Plugin : Plugin<Config>
     {
         public override string Name => "MusicWarhead";
-        public override string Author => "Leo D / 76561198968919551@steam";
+        public override string Author => "chillguy-leo";
         public override Version Version => new Version(1, 0, 0);
         public static Plugin Singleton { get; private set; }
 
