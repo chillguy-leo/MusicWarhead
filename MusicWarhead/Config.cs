@@ -17,7 +17,7 @@ namespace MusicWarhead
         [Description("Should the audio stop after it ends or keep looping?")]
         public bool StopAfterEnd { get; set; } = true;
 
-        [Description("Is the useless setting enabled?")]
+        [Description("Should debug messages be printed in console?")]
         public bool Debug { get; set; } = false;
     }
 }

@@ -10,14 +10,16 @@ namespace MusicWarhead
         public override string Author => "chillguy-leo";
         public override Version Version => new Version(1, 0, 0);
         public static Plugin Singleton { get; private set; }
+        private EventHandler eventHandler;
 
         public override void OnEnabled()
         {
             Singleton = this;
-            Exiled.Events.Handlers.Warhead.Starting += OnStarting;
-            Exiled.Events.Handlers.Warhead.Stopping += OnStopping;
+            eventHandler = new EventHandler();
+            Exiled.Events.Handlers.Warhead.Starting += eventHandler.OnStarting;
+            Exiled.Events.Handlers.Warhead.Stopping += eventHandler.OnStopping;
 
-            // audio
+            // audio loading into cache
             AudioClipStorage.LoadClip($"{Plugin.Singleton.Config.AudioLocation}", "audio");
             if (Plugin.Singleton.Config.AudioLocation == "")
             {
@@ -25,40 +27,21 @@ namespace MusicWarhead
                 return;
             }
 
+            Log.Debug("Loaded succesfully");
+
             base.OnEnabled();
         }
 
         public override void OnDisabled()
         {
-            Exiled.Events.Handlers.Warhead.Stopping -= OnStopping;
-            Exiled.Events.Handlers.Warhead.Starting += OnStarting;
+            Exiled.Events.Handlers.Warhead.Stopping -= eventHandler.OnStopping;
+            Exiled.Events.Handlers.Warhead.Starting += eventHandler.OnStarting;
+            eventHandler = null;
             Singleton = null;
+
+            Log.Debug("Disabled");
+
             base.OnDisabled();
-        }
-
-        private void OnStarting(StartingEventArgs ev)
-        {
-            // start audio
-            AudioPlayer audioPlayer = AudioPlayer.CreateOrGet($"GlobalAudio", onIntialCreation: (p) =>
-            { Speaker speaker = p.AddSpeaker("Main", isSpatial: false, maxDistance: 5000f); });
-
-            if (Plugin.Singleton.Config.StopAfterEnd)
-            {
-                audioPlayer.AddClip("audio", Plugin.Singleton.Config.AudioVolume, false, true);
-            }
-            else
-            {
-                audioPlayer.AddClip("audio", Plugin.Singleton.Config.AudioVolume, true, false);
-            }
-        }
-
-        private void OnStopping(StoppingEventArgs ev)
-        {
-            // stop audio if stopped
-            if (!AudioPlayer.TryGet("GlobalAudio", out AudioPlayer player))
-            { Log.Error("Failed to get audio player"); }
-
-            player.RemoveClipByName("frank");
         }
     }
 }
