@@ -8,7 +8,7 @@ namespace MusicWarhead
     {
         public override string Name => "MusicWarhead";
         public override string Author => "chillguy-leo";
-        public override Version Version => new Version(1, 0, 0);
+        public override Version Version => new Version(1, 0, 1);
         public static Plugin Singleton { get; private set; }
         private EventHandler eventHandler;
 
