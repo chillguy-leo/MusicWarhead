@@ -19,7 +19,7 @@ music_warhead:
   audio_volume: 1.10000002
   # Should the audio stop after it ends or keep looping?
   stop_after_end: true
-  # Is the useless setting enabled?
+  # Should debug messages be displayed?
   debug: false
 ```
 
