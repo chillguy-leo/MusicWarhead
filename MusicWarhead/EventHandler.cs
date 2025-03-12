@@ -14,14 +14,14 @@ namespace MusicWarhead
             Log.Debug("Audio player created/got");
 
             // play the sexy music that you have set
-            if (Plugin.Singleton.Config.StopAfterEnd)
+            if (Plugin.Instance.Config.StopAfterEnd)
             {
-                audioPlayer.AddClip("audio", Plugin.Singleton.Config.AudioVolume, false, true);
+                audioPlayer.AddClip("audio", Plugin.Instance.Config.AudioVolume, false, true);
                 Log.Debug("Added clip stopping after end");
             }
             else
             {
-                audioPlayer.AddClip("audio", Plugin.Singleton.Config.AudioVolume, true, false);
+                audioPlayer.AddClip("audio", Plugin.Instance.Config.AudioVolume, true, false);
                 Log.Debug("Added clip loading after endd");
             }
         }
