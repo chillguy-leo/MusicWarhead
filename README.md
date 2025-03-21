@@ -1,13 +1,12 @@
 [![Github Latest Release](https://img.shields.io/github/v/release/chillguy-leo/MusicWarhead)]() 
 [![Github All Releases](https://img.shields.io/github/downloads/chillguy-leo/MusicWarhead/total.svg)]() 
-# Apologies to all, I forgot to upload the required dependency
 # MusicWarhead
 Plays a desired audio file when the Warhead starts, I made this for [plugin request](https://discord.com/channels/656673194693885975/656709490959450113/1341844335049707600) in the Exiled Discord and I also wanted to learn how to use Git.
 
 ## Installation
 - Install like any other plugin and place in */EXILED/Plugins \ 
-- Add AudioPlayerApi to */EXILED/Plugins/dependencies \
 - Restart server \
+- In your Server's LocalAdmin/Console type 'mwinstalldepend' to install the required dependency
 - Place audio somewhere you trust, maybe like */EXILED/Configs, then get the direct file address and put the address in 'audio_location' in settings
 
 ## Audio Setup
