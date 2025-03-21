@@ -42,6 +42,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyInstaller.cs" />
     <Compile Include="EventHandler.cs" />
     <Compile Include="Plugin.cs" />
     <Compile Include="Config.cs" />
