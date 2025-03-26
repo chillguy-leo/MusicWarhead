@@ -8,6 +8,7 @@ Plays a desired audio file when the Warhead starts, I made this for [plugin requ
 - Restart server 
 - In your Server's LocalAdmin/Console type 'mwinstalldepend' to install the required dependency
 - Place audio somewhere you trust, maybe like */EXILED/Configs, then get the direct file address and put the address in 'audio_location' in settings
+- Restart server finally, and test!
 
 ## Audio Setup
 I would recomend [this](https://audio.online-convert.com/convert/mp3-to-ogg) to convert your mp3 files to ogg and set the correct preferences \
