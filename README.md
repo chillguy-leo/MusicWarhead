@@ -1,7 +1,7 @@
 [![Github Latest Release](https://img.shields.io/github/v/release/chillguy-leo/MusicWarhead)]() 
 [![Github All Releases](https://img.shields.io/github/downloads/chillguy-leo/MusicWarhead/total.svg)]() 
 # MusicWarhead
-Plays a desired audio file when the Warhead starts, I made this for [plugin request](https://discord.com/channels/656673194693885975/656709490959450113/1341844335049707600) in the Exiled Discord and I also wanted to learn how to use Git.
+Plays a desired audio file when the Warhead starts, I made this for [plugin request](https://discord.com/channels/656673194693885975/656709490959450113/1341844335049707600) in the Exiled Discord.
 
 ## Installation
 - Install like any other plugin and place in */EXILED/Plugins 
