@@ -18,6 +18,7 @@ namespace MusicWarhead
             eventHandler = new EventHandler();
             Exiled.Events.Handlers.Warhead.Starting += eventHandler.OnStarting;
             Exiled.Events.Handlers.Warhead.Stopping += eventHandler.OnStopping;
+            Exiled.Events.Handlers.Warhead.Detonating += eventHandler.OnDetonating;
 
             // audio loading into cache
             AudioClipStorage.LoadClip($"{Plugin.Instance.Config.AudioLocation}", "audio");
@@ -34,8 +35,9 @@ namespace MusicWarhead
 
         public override void OnDisabled()
         {
+            Exiled.Events.Handlers.Warhead.Detonating -= eventHandler.OnDetonating;
             Exiled.Events.Handlers.Warhead.Stopping -= eventHandler.OnStopping;
-            Exiled.Events.Handlers.Warhead.Starting += eventHandler.OnStarting;
+            Exiled.Events.Handlers.Warhead.Starting -= eventHandler.OnStarting;
             eventHandler = null;
             Instance = null;
 

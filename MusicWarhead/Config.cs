@@ -15,7 +15,10 @@ namespace MusicWarhead
         public float AudioVolume { get; set; } = 1.1f;
 
         [Description("Should the audio stop after it ends or keep looping?")]
-        public bool StopAfterEnd { get; set; } = true;
+        public bool StopAfterAudioEnd { get; set; } = true;
+
+        [Description("Should the audio stop after the nuke detonates?")]
+        public bool StopAfterDetonation { get; set; } = true;
 
         [Description("Should debug messages be printed in console?")]
         public bool Debug { get; set; } = false;
