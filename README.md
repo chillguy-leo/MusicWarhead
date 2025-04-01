@@ -27,7 +27,9 @@ music_warhead:
   # How loud is the audio?
   audio_volume: 1.10000002
   # Should the audio stop after it ends or keep looping?
-  stop_after_end: true
+  stop_after_audio_end: true
+  # Should the audio stop after the nuke detonates?
+  stop_after_detonation: true
   # Should debug messages be displayed?
   debug: false
 ```
